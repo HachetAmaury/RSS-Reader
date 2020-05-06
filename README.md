@@ -1,6 +1,6 @@
 # RSS reader
 
-Allow to pars RSS feed which respect the convention ( https://en.wikipedia.org/wiki/RSS )
+Allow to parse RSS feed which respect the convention ( https://en.wikipedia.org/wiki/RSS )
 
 Working RSS feeds :
 
