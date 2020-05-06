@@ -1,16 +1,9 @@
-html,
-body {
-    margin: 0;
-    height: 100vh;
-    width: 100vw;
-}
-
 .rss-reader {
-    height: 100vh;
     display: flex;
     margin: auto;
     flex-direction: column;
     justify-content: space-around;
+
     .title {
         text-align: center;
     }
@@ -23,17 +16,36 @@ body {
         .button {
             background: lightgrey;
             padding: 10px;
-            font-size: 2vh;
             border-radius: 10px;
-        }
-
-        .fetch-data-button {
-        }
-
-        input {
-            width: 60%;
             text-align: center;
-            font-size: 2vh;
+            margin: 2vw;
+        }
+
+        .search-container {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            input {
+                width: 60%;
+                text-align: center;
+                font-size: 1.5vw;
+                margin: auto;
+            }
+        }
+
+        .error {
+            color: red;
+            padding-bottom: 4vw;
+        }
+
+        .description {
+            padding-bottom: 2vw;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
         }
 
         .rss-results {
@@ -41,14 +53,19 @@ body {
             flex-direction: column;
             justify-content: space-evenly;
             .rss-block {
-                display: grid;
-                grid-template-columns: 20% 80%;
-                margin-bottom: 10px;
+                display: flex;
+                border-bottom: 1px solid lightgrey;
+                margin-bottom: 1vh;
+                border-radius: 1vh;
+                padding: 1vh;
+
+                -webkit-box-shadow: 7px 7px 25px -4px rgba(0, 0, 0, 0.75);
+                -moz-box-shadow: 7px 7px 25px -4px rgba(0, 0, 0, 0.75);
+                box-shadow: 7px 7px 25px -4px rgba(0, 0, 0, 0.75);
 
                 .left {
                     display: flex;
                     img {
-                        width: 100%;
                         max-width: 200px;
                         object-fit: contain;
                     }
@@ -57,35 +74,76 @@ body {
                 .right {
                     flex-grow: 1;
                     padding: 10px;
+                    margin: auto;
+
+                    .bottom {
+                        display: flex;
+                        justify-content: space-between;
+                    }
                 }
             }
         }
         .rss-bottom {
-            display: flex;
-            flex-direction: row;
-            width: 100%;
-            justify-content: space-evenly;
+            width: 50%;
+            .no-more-result {
+                margin: 2vw;
+                text-align: center;
+            }
         }
     }
 }
 
 @media only screen and (max-width: $medium-width) {
+    body {
+        font-size: 3vw;
+    }
     .rss-reader {
-        width: 100%;
+        width: 95%;
         .content {
+            .search-container {
+                input {
+                    font-size: 2.5vw;
+                }
+            }
+            .rss-results {
+                .rss-block {
+                    margin-bottom: 2vh;
+                    .left {
+                        img {
+                            display: none;
+                        }
+                    }
+                }
+            }
         }
     }
 }
 
 @media only screen and (min-width: $medium-width) and (max-width: $big-width) {
+    body {
+        font-size: 2vw;
+    }
     .rss-reader {
-        width: 80%;
+        width: 95%;
         .content {
+            .search-container {
+                input {
+                    font-size: 2.5vw;
+                }
+            }
+            .rss-results {
+                .rss-block {
+                    margin-bottom: 2vh;
+                }
+            }
         }
     }
 }
 
 @media only screen and (min-width: $big-width) {
+    body {
+        font-size: 1.5vw;
+    }
     .rss-reader {
         width: 80%;
         .content {

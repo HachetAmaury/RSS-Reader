@@ -1,6 +1,5 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const path = require('path');
 
 const isDevelopment = process.env.NODE_ENV === 'development';
 
@@ -57,9 +56,4 @@ module.exports = {
             chunkFilename: isDevelopment ? '[id].css' : '[id].[hash].css',
         }),
     ],
-    devServer: {
-        contentBase: path.join(__dirname, 'dist'),
-        compress: true,
-        port: 4004,
-    },
 };
