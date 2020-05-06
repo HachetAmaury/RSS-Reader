@@ -1,0 +1,19 @@
+version: '3.3'
+services:
+    default-img:
+        build:
+            dockerfile: DockerfileDefaultImg
+            context: .
+        networks:
+            - rs-reader
+    rss-reader:
+        depends_on:
+            - default-img
+        build: .
+        ports:
+            - '3000:3000'
+        networks:
+            - rs-reader
+
+networks:
+    rs-reader:

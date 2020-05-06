@@ -1,0 +1,23 @@
+FROM ubuntu:18.04
+
+LABEL maintainer="HACHET Amaury"
+
+# update 
+RUN apt-get update
+# install curl 
+RUN apt-get install -y curl git
+# get install script and pass it to execute: 
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash
+# and install node 
+RUN apt-get install -y nodejs
+# confirm that it was successful 
+RUN node -v
+# npm installs automatically 
+RUN npm -v
+# npm installs automatically 
+RUN git --version
+
+#create dev user
+RUN useradd -ms /bin/bash dev
+# user this dev user
+USER dev
